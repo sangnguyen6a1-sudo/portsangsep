@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sang Nguyễn | Junior SEO Specialist & SEO Content Executive Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        },
+                        darkBg: '#0f172a',
+                        darkCard: '#1e293b'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js for Interactive SEO Performance Dashboard -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #22c55e 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-gradient-primary {
+            background: linear-gradient(135deg, #22c55e 0%, #06b6d4 100%);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .dark ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #475569;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-darkBg dark:text-slate-100 transition-colors duration-300">
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50 backdrop-blur-md bg-white/80 dark:bg-darkBg/80 border-b border-slate-200 dark:border-slate-800 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-xl font-extrabold tracking-wider text-gradient">SANG NGUYEN</a>
+                </div>
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="hover:text-primary-500 font-medium transition-colors">Giới thiệu</a>
+                    <a href="#experience" class="hover:text-primary-500 font-medium transition-colors">Kinh nghiệm</a>
+                    <a href="#skills" class="hover:text-primary-500 font-medium transition-colors">Kỹ năng</a>
+                    <a href="#dashboard" class="hover:text-primary-500 font-medium transition-colors">Hiệu quả dự án</a>
+                    <a href="#projects" class="hover:text-primary-500 font-medium transition-colors">Dự án</a>
+                    <a href="#seotool" class="hover:text-primary-500 font-medium transition-colors">Mini Tool</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <!-- Light/Dark Mode Button -->
+                    <button id="themeToggle" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:ring-2 hover:ring-primary-500 text-slate-700 dark:text-slate-200 transition-all" aria-label="Toggle Theme">
+                        <i id="themeIcon" class="fa-solid fa-moon text-lg"></i>
+                    </button>
+                    <!-- CTA Button -->
+                    <a href="#contact" class="hidden sm:inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg text-white bg-gradient-primary hover:opacity-90 transition-all shadow-md">
+                        <i class="fa-solid fa-paper-plane mr-2"></i>Liên hệ
+                    </a>
+                    <!-- Mobile Menu Button -->
+                    <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="hidden md:hidden px-4 pt-2 pb-4 bg-white dark:bg-darkBg border-b border-slate-200 dark:border-slate-800 space-y-2">
+            <a href="#about" class="block py-2 text-base font-medium hover:text-primary-500">Giới thiệu</a>
+            <a href="#experience" class="block py-2 text-base font-medium hover:text-primary-500">Kinh nghiệm</a>
+            <a href="#skills" class="block py-2 text-base font-medium hover:text-primary-500">Kỹ năng</a>
+            <a href="#dashboard" class="block py-2 text-base font-medium hover:text-primary-500">Hiệu quả dự án</a>
+            <a href="#projects" class="block py-2 text-base font-medium hover:text-primary-500">Dự án</a>
+            <a href="#seotool" class="block py-2 text-base font-medium hover:text-primary-500">Mini Tool</a>
+            <a href="#contact" class="block py-2 text-center text-white bg-gradient-primary rounded-lg font-medium shadow">Liên hệ</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative overflow-hidden pt-16 pb-24 lg:pt-24 lg:pb-32 flex items-center">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 pointer-events-none opacity-20 dark:opacity-10">
+            <div class="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-primary-500 blur-3xl"></div>
+            <div class="absolute top-1/2 right-10 w-80 h-80 rounded-full bg-cyan-500 blur-3xl"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-primary-100 text-primary-800 dark:bg-primary-900/30 dark:text-primary-300">
+                        <span class="w-2 h-2 rounded-full bg-primary-500 mr-2 animate-ping"></span> Sẵn sàng nhận việc
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">
+                        Xin chào, tôi là <br/>
+                        <span class="text-gradient">Sang Nguyễn</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl font-medium text-slate-600 dark:text-slate-300">
+                        Junior SEO Specialist | SEO Content Executive
+                    </p>
+                    <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Tôi có 1 năm kinh nghiệm trong lĩnh vực SEO, bao gồm 6 tháng thực tập Content SEO và 6 tháng làm Nhân viên SEO. Tôi đã trực tiếp tham gia triển khai chiến lược SEO tổng thể: nghiên cứu từ khóa, xây dựng content chuẩn SEO, tối ưu hóa Onpage, xử lý Technical SEO cơ bản đến Offpage SEO nhằm bứt phá lưu lượng truy cập tự nhiên.
+                    </p>
+                    <!-- Quick Stats Badges -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 max-w-md mx-auto lg:mx-0">
+                        <div class="bg-white dark:bg-darkCard p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm text-center">
+                            <div class="text-2xl font-bold text-gradient">1 Năm+</div>
+                            <div class="text-xs text-slate-500 dark:text-slate-400">Kinh nghiệm SEO</div>
+                        </div>
+                        <div class="bg-white dark:bg-darkCard p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm text-center">
+                            <div class="text-2xl font-bold text-gradient">120+</div>
+                            <div class="text-xs text-slate-500 dark:text-slate-400">Từ khóa Top 10</div>
+                        </div>
+                        <div class="col-span-2 sm:col-span-1 bg-white dark:bg-darkCard p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm text-center">
+                            <div class="text-2xl font-bold text-gradient">+183%</div>
+                            <div class="text-xs text-slate-500 dark:text-slate-400">Tăng trưởng Traffic</div>
+                        </div>
+                    </div>
+                    <!-- Actions -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#contact" class="w-full sm:w-auto px-8 py-3 rounded-xl bg-gradient-primary text-white font-semibold text-center hover:opacity-95 transition-all shadow-lg shadow-primary-500/20">
+                            Liên hệ phỏng vấn
+                        </a>
+                        <a href="#dashboard" class="w-full sm:w-auto px-8 py-3 rounded-xl bg-white dark:bg-darkCard text-slate-800 dark:text-slate-200 font-semibold text-center hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 transition-all shadow-sm">
+                            Xem Case Study <i class="fa-solid fa-arrow-trend-up ml-2 text-primary-500"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Visual / Avatar Component -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
+                        <!-- Background Circle Animation -->
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-r from-primary-400 to-cyan-400 animate-spin opacity-30 blur-md" style="animation-duration: 12s;"></div>
+                        <!-- Profile Card Container -->
+                        <div class="absolute inset-3 rounded-full bg-slate-100 dark:bg-slate-800 border-4 border-white dark:border-darkBg overflow-hidden shadow-2xl flex flex-col justify-center items-center p-8 text-center">
+                            <!-- SVG Robot/SEO Specialist Art -->
+                            <svg class="w-32 h-32 mb-4 text-primary-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                <line x1="3" y1="9" x2="21" y2="9"/>
+                                <line x1="9" y1="21" x2="9" y2="9"/>
+                                <path d="M16.5 13.5L14 16l-2.5-2.5"/>
+                            </svg>
+                            <h3 class="text-xl font-bold">Sang Nguyễn</h3>
+                            <p class="text-xs text-primary-600 dark:text-primary-400 font-semibold mb-2">SEO CONTENT EXECUTIVE</p>
+                            <!-- Live SEO Metrics Mockup -->
+                            <div class="bg-white dark:bg-darkBg py-1 px-3 rounded-full text-[10px] font-mono border border-slate-200 dark:border-slate-700 flex items-center space-x-1">
+                                <span class="inline-block w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse"></span>
+                                <span class="text-slate-500">Google Index Status:</span>
+                                <span class="font-bold text-green-600">Active</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white dark:bg-darkCard/30 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-gradient">Giới Thiệu Bản Thân</h2>
+                <div class="h-1 w-20 bg-gradient-primary mx-auto mt-4 rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                <!-- Left Details -->
+                <div class="lg:col-span-5 space-y-6">
+                    <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Tư duy làm SEO bền vững, hướng tới người dùng (EEAT)</h3>
+                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+                        Tôi tin rằng SEO không chỉ đơn thuần là việc thao túng các công cụ tìm kiếm, mà là nghệ thuật mang lại giá trị thực sự cho người dùng và giải quyết nỗi đau của họ thông qua nội dung chất lượng cao.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
+                                <i class="fa-solid fa-car"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-sm">Đồ chơi công nghệ ô tô</h4>
+                                <p class="text-xs text-slate-500">Xây dựng content chuyên sâu, tối ưu Onpage kỹ thuật.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400">
+                                <i class="fa-solid fa-seedling"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-sm">Phân bón nông nghiệp</h4>
+                                <p class="text-xs text-slate-500">Phân tích từ khóa địa phương, tối ưu kiến thức nông nghiệp chuẩn SEO.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Target and Tooling -->
+                <div class="lg:col-span-7 space-y-8">
+                    <div class="bg-slate-100 dark:bg-darkCard p-6 rounded-2xl border border-slate-200/50 dark:border-slate-800">
+                        <h4 class="text-lg font-bold mb-3 flex items-center">
+                            <i class="fa-solid fa-bullseye text-primary-500 mr-2"></i> Mục tiêu nghề nghiệp
+                        </h4>
+                        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                            Trong 2-3 năm tới, tôi mong muốn phát triển bản thân mạnh mẽ theo hướng <strong>SEO Specialist</strong>, có khả năng tự tay xây dựng và triển khai độc lập các chiến dịch SEO tổng thể tinh gọn, hiệu quả, đóng góp trực tiếp vào bài toán tăng trưởng Traffic bền vững và tỷ lệ chuyển đổi (CRO) mang lại doanh thu thực tế cho doanh nghiệp.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="text-lg font-bold mb-4">Các công cụ hỗ trợ thường trực của tôi</h4>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                            <div class="flex items-center p-3 rounded-xl bg-slate-100/60 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-semibold">
+                                <i class="fa-brands fa-google text-red-500 mr-2 text-sm"></i> Google Search Console
+                            </div>
+                            <div class="flex items-center p-3 rounded-xl bg-slate-100/60 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-semibold">
+                                <i class="fa-solid fa-chart-line text-amber-500 mr-2 text-sm"></i> Google Analytics 4
+                            </div>
+                            <div class="flex items-center p-3 rounded-xl bg-slate-100/60 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-semibold">
+                                <i class="fa-solid fa-key text-blue-500 mr-2 text-sm"></i> Ahrefs Toolset
+                            </div>
+                            <div class="flex items-center p-3 rounded-xl bg-slate-100/60 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-semibold">
+                                <i class="fa-solid fa-magnifying-glass-chart text-green-500 mr-2 text-sm"></i> Screaming Frog
+                            </div>
+                            <div class="flex items-center p-3 rounded-xl bg-slate-100/60 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-semibold">
+                                <i class="fa-brands fa-wordpress text-cyan-600 mr-2 text-sm"></i> WordPress CMS
+                            </div>
+                            <div class="flex items-center p-3 rounded-xl bg-slate-100/60 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-semibold">
+                                <i class="fa-solid fa-table text-emerald-600 mr-2 text-sm"></i> Google Sheets (Automation)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-slate-50 dark:bg-darkBg transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-gradient">Lịch Sử Làm Việc</h2>
+                <div class="h-1 w-20 bg-gradient-primary mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-slate-600 dark:text-slate-400 text-sm">Hành trình 1 năm không ngừng học hỏi và mang lại các kết quả tăng trưởng đột phá.</p>
+            </div>
+
+            <!-- Experience Timeline -->
+            <div class="relative border-l-2 border-slate-200 dark:border-slate-800 max-w-4xl mx-auto pl-6 sm:pl-10 space-y-12">
+                
+                <!-- Card 1: SEO Executive -->
+                <div class="relative">
+                    <!-- Bullet Point Dot -->
+                    <span class="absolute -left-[35px] sm:-left-[51px] top-0 flex items-center justify-center w-8 h-8 rounded-full bg-primary-100 dark:bg-primary-950 border-4 border-white dark:border-darkBg text-primary-600 dark:text-primary-400 shadow-sm">
+                        <i class="fa-solid fa-briefcase text-xs"></i>
+                    </span>
+                    <div class="bg-white dark:bg-darkCard p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                            <div>
+                                <span class="px-2 py-0.5 rounded text-xs font-semibold bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300">Chính thức</span>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-1">Nhân viên SEO (SEO Executive)</h3>
+                                <p class="text-sm font-semibold text-slate-500 dark:text-slate-400">Lĩnh vực: Đồ chơi công nghệ ô tô</p>
+                            </div>
+                            <span class="text-sm font-semibold text-primary-600 dark:text-primary-400 flex items-center bg-slate-100 dark:bg-slate-900 py-1 px-3 rounded-full self-start sm:self-center">
+                                <i class="fa-regular fa-calendar mr-2"></i> 6 tháng gần nhất
+                            </span>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                            <!-- Tasks -->
+                            <div>
+                                <h4 class="font-bold text-sm text-slate-900 dark:text-white mb-2 flex items-center">
+                                    <i class="fa-solid fa-list-check mr-2 text-primary-500"></i> Công việc chính:
+                                </h4>
+                                <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                                    <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mr-2 mt-1"></i> Nghiên cứu từ khóa chuyên sâu bằng Ahrefs, Keyword Planner.</li>
+                                    <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mr-2 mt-1"></i> Viết bài mới & tối ưu hóa bài viết cũ theo chuẩn SEO.</li>
+                                    <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mr-2 mt-1"></i> Xây dựng hệ thống Internal Link thông minh.</li>
+                                    <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mr-2 mt-1"></i> Audit Onpage và sửa lỗi Technical SEO cơ bản (Canonical, Redirect, Sitemap).</li>
+                                    <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mr-2 mt-1"></i> Triển khai liên kết Backlink chất lượng & Social Entity.</li>
+                                </ul>
+                            </div>
+                            <!-- Results -->
+                            <div class="bg-primary-50/50 dark:bg-primary-950/20 p-4 rounded-xl border border-primary-100 dark:border-primary-900/30">
+                                <h4 class="font-bold text-sm text-primary-800 dark:text-primary-300 mb-3 flex items-center">
+                                    <i class="fa-solid fa-chart-line mr-2"></i> Kết quả vượt trội đạt được:
+                                </h4>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div class="p-3 bg-white dark:bg-darkCard rounded-lg border border-slate-200/50 dark:border-slate-800">
+                                        <div class="text-xl font-bold text-emerald-600 dark:text-emerald-400">8,500/tháng</div>
+                                        <div class="text-[10px] text-slate-500 uppercase font-semibold">Organic Traffic (từ 3k)</div>
+                                    </div>
+                                    <div class="p-3 bg-white dark:bg-darkCard rounded-lg border border-slate-200/50 dark:border-slate-800">
+                                        <div class="text-xl font-bold text-emerald-600 dark:text-emerald-400">120+ Key</div>
+                                        <div class="text-[10px] text-slate-500 uppercase font-semibold">Tăng vào Top 10 Google</div>
+                                    </div>
+                                    <div class="p-3 bg-white dark:bg-darkCard rounded-lg border border-slate-200/50 dark:border-slate-800">
+                                        <div class="text-xl font-bold text-emerald-600 dark:text-emerald-400">30+ Key</div>
+                                        <div class="text-[10px] text-slate-500 uppercase font-semibold">Đạt vị trí Top 3</div>
+                                    </div>
+                                    <div class="p-3 bg-white dark:bg-darkCard rounded-lg border border-slate-200/50 dark:border-slate-800">
+                                        <div class="text-xl font-bold text-emerald-600 dark:text-emerald-400">5.6%</div>
+                                        <div class="text-[10px] text-slate-500 uppercase font-semibold">CTR Trung Bình (từ 2.8%)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Internship Content SEO -->
+                <div class="relative">
+                    <!-- Bullet Point Dot -->
+                    <span class="absolute -left-[35px] sm:-left-[51px] top-0 flex items-center justify-center w-8 h-8 rounded-full bg-primary-100 dark:bg-primary-950 border-4 border-white dark:border-darkBg text-primary-600 dark:text-primary-400 shadow-sm">
+                        <i class="fa-solid fa-graduation-cap text-xs"></i>
+                    </span>
+                    <div class="bg-white dark:bg-darkCard p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                            <div>
+                                <span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-100 dark:bg-blue-950 text-blue-800 dark:text-blue-300">Thực tập sinh</span>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-1">Thực tập sinh Content SEO</h3>
+                                <p class="text-sm font-semibold text-slate-500 dark:text-slate-400">Lĩnh vực: Phân bón nông nghiệp</p>
+                            </div>
+                            <span class="text-sm font-semibold text-primary-600 dark:text-primary-400 flex items-center bg-slate-100 dark:bg-slate-900 py-1 px-3 rounded-full self-start sm:self-center">
+                                <i class="fa-regular fa-calendar mr-2"></i> 6 tháng đầu tiên
+                            </span>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                            <!-- Tasks -->
+                            <div>
+                                <h4 class="font-bold text-sm text-slate-900 dark:text-white mb-2 flex items-center">
+                                    <i class="fa-solid fa-list-check mr-2 text-primary-500"></i> Công việc chính:
+                                </h4>
+                                <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                                    <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mr-2 mt-1"></i> Sáng tạo nội dung chuẩn SEO bám sát nhu cầu người nông dân.</li>
+                                    <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mr-2 mt-1"></i> Tìm kiếm và mở rộng bộ từ khóa ngành nông nghiệp.</li>
+                                    <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mr-2 mt-1"></i> Tối ưu hóa cấu trúc hình ảnh (Alt, nén dung lượng, mô tả).</li>
+                                    <li class="flex items-start"><i class="fa-solid fa-check text-green-500 mr-2 mt-1"></i> Đóng góp xây dựng các liên kết bài viết nội bộ (Internal link).</li>
+                                </ul>
+                            </div>
+                            <!-- Results -->
+                            <div class="bg-blue-50/50 dark:bg-blue-950/20 p-4 rounded-xl border border-blue-100 dark:border-blue-900/30">
+                                <h4 class="font-bold text-sm text-blue-800 dark:text-blue-300 mb-3 flex items-center">
+                                    <i class="fa-solid fa-chart-line mr-2"></i> Kết quả thực tế đạt được:
+                                </h4>
+                                <div class="space-y-3">
+                                    <div class="flex items-center justify-between p-2 bg-white dark:bg-darkCard rounded-lg border border-slate-200/50 dark:border-slate-800">
+                                        <span class="text-xs font-semibold text-slate-500">Sản xuất nội dung:</span>
+                                        <span class="text-sm font-bold text-blue-600 dark:text-blue-400">100+ bài viết chuẩn SEO</span>
+                                    </div>
+                                    <div class="flex items-center justify-between p-2 bg-white dark:bg-darkCard rounded-lg border border-slate-200/50 dark:border-slate-800">
+                                        <span class="text-xs font-semibold text-slate-500">Nghiên cứu từ khóa:</span>
+                                        <span class="text-sm font-bold text-blue-600 dark:text-blue-400">Nhóm 500+ từ khóa cốt lõi</span>
+                                    </div>
+                                    <div class="flex items-center justify-between p-2 bg-white dark:bg-darkCard rounded-lg border border-slate-200/50 dark:border-slate-800">
+                                        <span class="text-xs font-semibold text-slate-500">Tăng trưởng traffic:</span>
+                                        <span class="text-sm font-bold text-blue-600 dark:text-blue-400">Góp phần tăng 40% Organic Traffic</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Grid Section -->
+    <section id="skills" class="py-20 bg-white dark:bg-darkCard/30 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-gradient">Kỹ Năng Chuyên Môn</h2>
+                <div class="h-1 w-20 bg-gradient-primary mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Skill Column 1: Content SEO -->
+                <div class="bg-slate-50 dark:bg-darkCard p-6 rounded-2xl border border-slate-200 dark:border-slate-800 hover:-translate-y-1 transition-transform">
+                    <div class="w-12 h-12 rounded-xl bg-primary-100 dark:bg-primary-950 flex items-center justify-center text-primary-600 dark:text-primary-400 mb-6 shadow-sm">
+                        <i class="fa-solid fa-pen-nib text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-4">Content SEO</h3>
+                    <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-400">
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Nghiên cứu từ khóa phễu</li>
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Xây dựng Topic Cluster bài bản</li>
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Lập kế hoạch Content Map</li>
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Tối ưu cấu trúc bài viết chuẩn SEO</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Column 2: Onpage SEO -->
+                <div class="bg-slate-50 dark:bg-darkCard p-6 rounded-2xl border border-slate-200 dark:border-slate-800 hover:-translate-y-1 transition-transform">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-100 dark:bg-cyan-950 flex items-center justify-center text-cyan-600 dark:text-cyan-400 mb-6 shadow-sm">
+                        <i class="fa-solid fa-sliders text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-4">Onpage SEO</h3>
+                    <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-400">
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Tối ưu Title & Meta Description</li>
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Thiết lập Heading Structure tối ưu</li>
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Cài đặt Internal Link hiệu quả</li>
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Tạo Schema cơ bản & EEAT</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Column 3: Technical SEO -->
+                <div class="bg-slate-50 dark:bg-darkCard p-6 rounded-2xl border border-slate-200 dark:border-slate-800 hover:-translate-y-1 transition-transform">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-100 dark:bg-indigo-950 flex items-center justify-center text-indigo-600 dark:text-indigo-400 mb-6 shadow-sm">
+                        <i class="fa-solid fa-code text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-4">Technical SEO</h3>
+                    <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-400">
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Audit website qua Screaming Frog</li>
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Cấu hình Sitemap XML & Robots.txt</li>
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Xử lý Canonical URL & Redirect 301</li>
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Tối ưu cơ bản Core Web Vitals</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Column 4: Offpage SEO -->
+                <div class="bg-slate-50 dark:bg-darkCard p-6 rounded-2xl border border-slate-200 dark:border-slate-800 hover:-translate-y-1 transition-transform">
+                    <div class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-950 flex items-center justify-center text-purple-600 dark:text-purple-400 mb-6 shadow-sm">
+                        <i class="fa-solid fa-share-nodes text-lg"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-4">Offpage SEO</h3>
+                    <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-400">
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Thiết lập Social Entity thống nhất</li>
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Tối ưu hóa Google Business Profile</li>
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Xây dựng Backlink Profile sạch</li>
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-green-500 mr-2"></i> Khai thác bài đăng Guest Post uy tín</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive SEO Dashboard Section -->
+    <section id="dashboard" class="py-20 bg-slate-50 dark:bg-darkBg transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-bold text-primary-600 dark:text-primary-400 tracking-wider uppercase bg-primary-100 dark:bg-primary-950/50 py-1 px-3 rounded-full">Dữ liệu thực tế</span>
+                <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-gradient mt-3">Biểu Đồ Tăng Trưởng Chiến Dịch</h2>
+                <div class="h-1 w-20 bg-gradient-primary mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-slate-600 dark:text-slate-400 text-sm">Chuyển đổi tab để xem các số liệu tăng trưởng trong vòng 6 tháng quản lý SEO Đồ chơi công nghệ Ô tô.</p>
+            </div>
+
+            <!-- Dashboard Mockup Card -->
+            <div class="bg-white dark:bg-darkCard rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl overflow-hidden max-w-5xl mx-auto">
+                <!-- Dashboard Header -->
+                <div class="p-6 border-b border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 bg-slate-50/50 dark:bg-darkCard/50">
+                    <div class="flex items-center space-x-3">
+                        <div class="p-2 bg-gradient-primary rounded-lg text-white">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-900 dark:text-white">Giao diện Báo cáo Hiệu quả</h3>
+                            <p class="text-xs text-slate-500">Nguồn: Kết quả thực tế tích hợp từ GSC & GA4</p>
+                        </div>
+                    </div>
+                    <!-- Interaction Tabs -->
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="updateChart('traffic')" id="btn-traffic" class="px-4 py-2 text-xs font-semibold rounded-lg bg-primary-600 text-white transition-all shadow-sm">Organic Traffic</button>
+                        <button onclick="updateChart('keywords')" id="btn-keywords" class="px-4 py-2 text-xs font-semibold rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition-all">Keywords In Top 10</button>
+                        <button onclick="updateChart('ctr')" id="btn-ctr" class="px-4 py-2 text-xs font-semibold rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition-all">CTR % Tăng trưởng</button>
+                    </div>
+                </div>
+
+                <!-- Dashboard Analytics Body -->
+                <div class="p-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <!-- Left Side Chart -->
+                        <div class="lg:col-span-8">
+                            <div class="h-[300px] w-full relative">
+                                <canvas id="performanceChart"></canvas>
+                            </div>
+                        </div>
+                        <!-- Right Side Summary Grid -->
+                        <div class="lg:col-span-4 space-y-6">
+                            <div class="bg-slate-50 dark:bg-darkBg p-4 rounded-xl border border-slate-200 dark:border-slate-800">
+                                <div id="metric-title" class="text-xs font-bold uppercase tracking-wider text-slate-500">Organic Traffic Hàng Tháng</div>
+                                <div id="metric-val" class="text-3xl font-extrabold text-primary-600 dark:text-primary-400 mt-1">8,500 <span class="text-xs font-normal text-slate-500">phiên/tháng</span></div>
+                                <div id="metric-desc" class="text-xs text-slate-500 dark:text-slate-400 mt-2">Đạt tỉ lệ tăng trưởng ấn tượng gấp 2.8 lần so với thời điểm bắt đầu nhận bàn giao (3,000 phiên/tháng).</div>
+                            </div>
+
+                            <div class="space-y-3">
+                                <h4 class="font-bold text-sm">Điểm sáng chiến thuật hành động:</h4>
+                                <div class="flex items-start space-x-2 text-xs">
+                                    <span class="text-emerald-500 mt-0.5"><i class="fa-solid fa-circle-check"></i></span>
+                                    <span>Tập trung nhóm từ khóa đuôi dài độ khó thấp (Long-tail SEO) để ra traffic nhanh.</span>
+                                </div>
+                                <div class="flex items-start space-x-2 text-xs">
+                                    <span class="text-emerald-500 mt-0.5"><i class="fa-solid fa-circle-check"></i></span>
+                                    <span>Tối ưu hóa hình ảnh chuẩn hóa SEO kích thước giúp website tải cực mượt.</span>
+                                </div>
+                                <div class="flex items-start space-x-2 text-xs">
+                                    <span class="text-emerald-500 mt-0.5"><i class="fa-solid fa-circle-check"></i></span>
+                                    <span>Internal Link cấu trúc Silo gia tăng dòng chảy sức mạnh website tốt nhất.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white dark:bg-darkCard/30 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-gradient">Dự Án Nổi Bật</h2>
+                <div class="h-1 w-20 bg-gradient-primary mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-slate-600 dark:text-slate-400 text-sm">Case-study chi tiết từ nghiên cứu đến thực chiến mang lại kết quả thiết thực.</p>
+            </div>
+
+            <!-- Single Showcase Card with Modern Card Grid -->
+            <div class="max-w-4xl mx-auto bg-slate-50 dark:bg-darkCard rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-lg">
+                <div class="grid grid-cols-1 md:grid-cols-12">
+                    <!-- Left Visual representation -->
+                    <div class="md:col-span-5 bg-gradient-primary p-8 flex flex-col justify-between text-white relative">
+                        <!-- Absolute grid background pattern -->
+                        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 16px 16px;"></div>
+                        <div class="relative z-10">
+                            <span class="bg-white/20 px-3 py-1 rounded-full text-xs font-semibold tracking-wide">Case Study Thắng Lợi</span>
+                            <h3 class="text-2xl font-extrabold mt-4">Ngành Đồ Chơi Công Nghệ Ô Tô</h3>
+                            <p class="text-sm text-emerald-100 mt-2">Tối ưu tổng thể website & đẩy top loạt sản phẩm phụ kiện ô tô.</p>
+                        </div>
+                        <div class="mt-8 relative z-10">
+                            <div class="text-xs uppercase font-bold tracking-wider text-emerald-100">Vai Trò</div>
+                            <div class="text-lg font-bold">SEO Content Executive</div>
+                        </div>
+                    </div>
+
+                    <!-- Right Specs -->
+                    <div class="md:col-span-7 p-6 sm:p-8 space-y-6">
+                        <div>
+                            <h4 class="font-extrabold text-sm text-slate-500 uppercase tracking-wider mb-2">Công việc cốt lõi đã làm:</h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-600 dark:text-slate-400">
+                                <div class="flex items-center"><i class="fa-solid fa-caret-right text-primary-500 mr-2"></i> Nghiên cứu 300+ từ khóa</div>
+                                <div class="flex items-center"><i class="fa-solid fa-caret-right text-primary-500 mr-2"></i> Triển khai Content chuẩn Onpage</div>
+                                <div class="flex items-center"><i class="fa-solid fa-caret-right text-primary-500 mr-2"></i> Thiết lập cấu trúc Schema</div>
+                                <div class="flex items-center"><i class="fa-solid fa-caret-right text-primary-500 mr-2"></i> Xử lý chuyển hướng 301 lỗi</div>
+                                <div class="flex items-center"><i class="fa-solid fa-caret-right text-primary-500 mr-2"></i> Đăng ký 30+ Social Entity</div>
+                            </div>
+                        </div>
+
+                        <hr class="border-slate-200 dark:border-slate-800">
+
+                        <!-- Outcomes -->
+                        <div>
+                            <h4 class="font-extrabold text-sm text-slate-500 uppercase tracking-wider mb-3">Hiệu suất thu về (+XXX%):</h4>
+                            <div class="grid grid-cols-3 gap-2">
+                                <div class="p-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl text-center">
+                                    <div class="text-lg font-extrabold text-green-500">+183%</div>
+                                    <div class="text-[9px] text-slate-500">Organic Traffic</div>
+                                </div>
+                                <div class="p-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl text-center">
+                                    <div class="text-lg font-extrabold text-green-500">+120</div>
+                                    <div class="text-[9px] text-slate-500">Từ khóa Top 10</div>
+                                </div>
+                                <div class="p-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl text-center">
+                                    <div class="text-lg font-extrabold text-green-500">+30</div>
+                                    <div class="text-[9px] text-slate-500">Từ khóa Top 3</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mini Badges for Used tools -->
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span class="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs font-mono text-slate-600 dark:text-slate-400">GSC</span>
+                            <span class="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs font-mono text-slate-600 dark:text-slate-400">GA4</span>
+                            <span class="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs font-mono text-slate-600 dark:text-slate-400">Ahrefs</span>
+                            <span class="px-2.5 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs font-mono text-slate-600 dark:text-slate-400">WordPress</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive SEO Mini Tool Section -->
+    <section id="seotool" class="py-20 bg-slate-50 dark:bg-darkBg transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold text-primary-600 dark:text-primary-400 tracking-wider uppercase bg-primary-100 dark:bg-primary-950/50 py-1 px-3 rounded-full">Mini Interactive Tool</span>
+                <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-gradient mt-3">Trình Kiểm Tra Onpage SEO Thực Tế</h2>
+                <div class="h-1 w-20 bg-gradient-primary mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-slate-600 dark:text-slate-400 text-sm">Điền thử các trường Onpage để hệ thống phân tích "Điểm tối ưu" tự động của tôi. Đây chính là cách tôi tối ưu hóa Onpage hàng ngày!</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto bg-white dark:bg-darkCard rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl overflow-hidden p-6 sm:p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Tool Controls Inputs -->
+                    <div class="space-y-4">
+                        <h3 class="text-lg font-bold flex items-center"><i class="fa-solid fa-spell-check text-primary-500 mr-2"></i> Nhập Dữ Liệu Demo</h3>
+                        
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Từ Khóa Chính Mục Tiêu</label>
+                            <input type="text" id="targetKeyword" class="w-full px-4 py-2 rounded-xl bg-slate-50 dark:bg-darkBg border border-slate-200 dark:border-slate-800 focus:outline-none focus:ring-2 focus:ring-primary-500 text-sm transition-all" value="đồ chơi xe hơi" placeholder="Ví dụ: đồ chơi xe hơi">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Thẻ Title Bài Viết (Tiêu Đề)</label>
+                            <input type="text" id="targetTitle" class="w-full px-4 py-2 rounded-xl bg-slate-50 dark:bg-darkBg border border-slate-200 dark:border-slate-800 focus:outline-none focus:ring-2 focus:ring-primary-500 text-sm transition-all" value="Top 10 đồ chơi xe hơi thông minh giá rẻ chất lượng nhất 2026" placeholder="Nhập tiêu đề">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Thẻ Meta Description</label>
+                            <textarea id="targetDesc" rows="3" class="w-full px-4 py-2 rounded-xl bg-slate-50 dark:bg-darkBg border border-slate-200 dark:border-slate-800 focus:outline-none focus:ring-2 focus:ring-primary-500 text-sm transition-all resize-none" placeholder="Nhập mô tả tìm kiếm">Tổng hợp các loại đồ chơi xe hơi thông minh cao cấp chính hãng từ Android Box, màn hình định vị giúp nâng tầm đẳng cấp xế cưng của bạn. Xem ngay!</textarea>
+                        </div>
+
+                        <button onclick="calculateSEOScore()" class="w-full py-3 rounded-xl bg-gradient-primary text-white font-semibold text-sm hover:opacity-95 transition-all shadow-md">
+                            <i class="fa-solid fa-square-poll-vertical mr-2"></i>Tính toán điểm SEO On-page
+                        </button>
+                    </div>
+
+                    <!-- Tool Output Panel -->
+                    <div class="bg-slate-50 dark:bg-darkBg p-6 rounded-2xl border border-slate-200/60 dark:border-slate-800 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-sm font-extrabold uppercase text-slate-500 tracking-wider mb-4">Kết Quả Phân Tích On-page</h3>
+                            
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-sm font-semibold">Điểm Tối Ưu:</span>
+                                <span id="scoreBadge" class="px-3 py-1 bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 rounded-full font-bold text-sm">90 / 100</span>
+                            </div>
+
+                            <!-- Score visual bar -->
+                            <div class="w-full bg-slate-200 dark:bg-slate-800 h-2.5 rounded-full overflow-hidden mb-6">
+                                <div id="scoreBar" class="bg-gradient-primary h-full transition-all duration-500" style="width: 90%;"></div>
+                            </div>
+
+                            <!-- Audit Checklist -->
+                            <ul class="space-y-3 text-xs" id="checklist">
+                                <li class="flex items-start"><span class="text-green-500 mr-2"><i class="fa-solid fa-circle-check"></i></span> Từ khóa xuất hiện trong Tiêu đề (Rất tốt)</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2"><i class="fa-solid fa-circle-check"></i></span> Độ dài tiêu đề chuẩn (57 ký tự)</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2"><i class="fa-solid fa-circle-check"></i></span> Từ khóa xuất hiện trong Description (Tốt)</li>
+                                <li class="flex items-start"><span class="text-green-500 mr-2"><i class="fa-solid fa-circle-check"></i></span> Độ dài mô tả Meta phù hợp (134 ký tự)</li>
+                            </ul>
+                        </div>
+
+                        <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800 text-[11px] text-slate-500 italic">
+                            * Công cụ tự động phân tích độ dài ký tự tối ưu cho SEO Google (Tiêu đề: 50-60 ký tự, Mô tả: 120-160 ký tự).
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications & Knowledge Section -->
+    <section class="py-20 bg-white dark:bg-darkCard/30 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                
+                <!-- Certifications/Knowledge Column -->
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center">
+                        <i class="fa-solid fa-graduation-cap text-primary-500 mr-3"></i> Kiến thức & Chuyên môn sâu
+                    </h3>
+                    <div class="h-1 w-12 bg-gradient-primary rounded-full"></div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="p-4 bg-slate-50 dark:bg-darkCard rounded-xl border border-slate-200 dark:border-slate-800">
+                            <h4 class="font-bold text-sm text-slate-900 dark:text-white">SEO Tổng Thể</h4>
+                            <p class="text-xs text-slate-500 mt-1">Xây dựng kiến trúc liên kết bài bản, từ khóa toàn diện bao phủ ngành hàng.</p>
+                        </div>
+                        <div class="p-4 bg-slate-50 dark:bg-darkCard rounded-xl border border-slate-200 dark:border-slate-800">
+                            <h4 class="font-bold text-sm text-slate-900 dark:text-white">Technical SEO cơ bản</h4>
+                            <p class="text-xs text-slate-500 mt-1">Tìm ra và sửa các lỗi về thu thập thông tin, Index và tối ưu tốc độ cốt lõi.</p>
+                        </div>
+                        <div class="p-4 bg-slate-50 dark:bg-darkCard rounded-xl border border-slate-200 dark:border-slate-800">
+                            <h4 class="font-bold text-sm text-slate-900 dark:text-white">Entity SEO</h4>
+                            <p class="text-xs text-slate-500 mt-1">Chuẩn hóa thông tin thương hiệu của dự án nhất quán trên không gian số.</p>
+                        </div>
+                        <div class="p-4 bg-slate-50 dark:bg-darkCard rounded-xl border border-slate-200 dark:border-slate-800">
+                            <h4 class="font-bold text-sm text-slate-900 dark:text-white">Local SEO cơ bản</h4>
+                            <p class="text-xs text-slate-500 mt-1">Tối ưu thông tin bản đồ tiếp cận khách hàng xung quanh dễ dàng.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Core Values & Strengths Column -->
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center">
+                        <i class="fa-solid fa-heart text-primary-500 mr-3"></i> Giá trị cốt lõi & Thái độ làm việc
+                    </h3>
+                    <div class="h-1 w-12 bg-gradient-primary rounded-full"></div>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                        Tôi tự nhận định bản thân là một người có tính bền bỉ, nhạy bén với những thay đổi thuật toán của Google và luôn đặt chất lượng trải nghiệm của khách hàng đọc bài lên hàng đầu.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 rounded-full bg-emerald-100 dark:bg-emerald-950 flex items-center justify-center text-emerald-600 dark:text-emerald-400 text-sm font-bold">1</div>
+                            <span class="text-sm font-semibold">Tự học cực cao, cập nhật xu hướng SEO AI, Search Generative Experience nhanh nhạy.</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 rounded-full bg-emerald-100 dark:bg-emerald-950 flex items-center justify-center text-emerald-600 dark:text-emerald-400 text-sm font-bold">2</div>
+                            <span class="text-sm font-semibold">Thực tế, đo lường mọi hành động SEO dựa trên data cụ thể của GSC & GA4.</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 rounded-full bg-emerald-100 dark:bg-emerald-950 flex items-center justify-center text-emerald-600 dark:text-emerald-400 text-sm font-bold">3</div>
+                            <span class="text-sm font-semibold">Phối hợp chặt chẽ với đội ngũ thiết kế, kỹ thuật hoặc content khác.</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="py-20 bg-slate-50 dark:bg-darkBg transition-colors border-t border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-gradient">Kết Nối Với Tôi</h2>
+                <div class="h-1 w-20 bg-gradient-primary mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-slate-600 dark:text-slate-400 text-sm">Gửi tin nhắn trực tiếp để trao đổi chi tiết về các vị trí tuyển dụng hoặc dự án SEO cần hợp tác.</p>
+            </div>
+
+            <div class="max-w-5xl mx-auto bg-white dark:bg-darkCard rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-xl">
+                <div class="grid grid-cols-1 md:grid-cols-12">
+                    <!-- Contact Cards Details -->
+                    <div class="md:col-span-5 bg-gradient-primary p-8 text-white flex flex-col justify-between">
+                        <div class="space-y-6">
+                            <h3 class="text-2xl font-bold">Thông tin liên lạc</h3>
+                            <p class="text-sm text-emerald-100">Liên hệ qua điện thoại, email hoặc các kênh mạng xã hội chuyên nghiệp của tôi bất cứ lúc nào.</p>
+                            
+                            <div class="space-y-4 pt-4">
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-lg">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs text-emerald-200 font-bold uppercase">Email trực tiếp</div>
+                                        <div class="text-sm font-semibold">sangnguyen.seo@gmail.com</div>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-lg">
+                                        <i class="fa-solid fa-phone"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs text-emerald-200 font-bold uppercase">Số điện thoại</div>
+                                        <div class="text-sm font-semibold">09x.xxx.xxxx</div>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-lg">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs text-emerald-200 font-bold uppercase">Khu vực làm việc</div>
+                                        <div class="text-sm font-semibold">Hồ Chí Minh, Việt Nam (hoặc Remote)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social links -->
+                        <div class="flex space-x-4 pt-8 border-t border-white/20 mt-8">
+                            <a href="#" class="w-10 h-10 rounded-lg bg-white/10 hover:bg-white/20 flex items-center justify-center text-lg transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#" class="w-10 h-10 rounded-lg bg-white/10 hover:bg-white/20 flex items-center justify-center text-lg transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" class="w-10 h-10 rounded-lg bg-white/10 hover:bg-white/20 flex items-center justify-center text-lg transition-colors"><i class="fa-solid fa-globe"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Form -->
+                    <form id="contactForm" class="md:col-span-7 p-6 sm:p-8 space-y-4" onsubmit="handleFormSubmit(event)">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Họ & Tên của bạn</label>
+                                <input type="text" id="contactName" required class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-darkBg border border-slate-200 dark:border-slate-800 focus:outline-none focus:ring-2 focus:ring-primary-500 text-sm transition-all" placeholder="Nguyễn Văn A">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Email liên lạc</label>
+                                <input type="email" id="contactEmail" required class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-darkBg border border-slate-200 dark:border-slate-800 focus:outline-none focus:ring-2 focus:ring-primary-500 text-sm transition-all" placeholder="tuyendung@congty.com">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Tiêu đề liên hệ</label>
+                            <input type="text" id="contactSubject" required class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-darkBg border border-slate-200 dark:border-slate-800 focus:outline-none focus:ring-2 focus:ring-primary-500 text-sm transition-all" placeholder="Cơ hội hợp tác / Lời mời phỏng vấn">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-slate-500 mb-1">Nội dung chi tiết</label>
+                            <textarea id="contactMessage" required rows="5" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 dark:bg-darkBg border border-slate-200 dark:border-slate-800 focus:outline-none focus:ring-2 focus:ring-primary-500 text-sm transition-all resize-none" placeholder="Viết tin nhắn của bạn ở đây..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-3 rounded-xl bg-gradient-primary text-white font-semibold text-sm hover:opacity-95 transition-all shadow-md flex items-center justify-center">
+                            <i class="fa-solid fa-paper-plane mr-2"></i> Gửi Tin Nhắn Cho Sang
+                        </button>
+
+                        <!-- Toast Alert Container (Custom Message popup instead of alert()) -->
+                        <div id="toastSuccess" class="hidden mt-4 p-4 rounded-xl bg-green-100 text-green-800 dark:bg-green-950 dark:text-green-300 border border-green-200 dark:border-green-900 text-sm font-semibold flex items-center">
+                            <i class="fa-solid fa-circle-check mr-2 text-lg"></i> Cảm ơn bạn! Tin nhắn giả lập đã được gửi thành công, Sang Nguyễn sẽ liên hệ lại ngay!
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-100 dark:bg-darkBg border-t border-slate-200 dark:border-slate-800 py-8 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-xs text-slate-500">© 2026 Sang Nguyễn. Thiết kế Portfolio tương tác thông minh cho vị trí SEO Content Executive.</p>
+            <div class="flex space-x-6 text-xs font-semibold">
+                <a href="#about" class="hover:underline">Giới thiệu</a>
+                <a href="#experience" class="hover:underline">Kinh nghiệm</a>
+                <a href="#dashboard" class="hover:underline">Tương tác</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme switching logic
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const html = document.documentElement;
+
+        // Check user preferences
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+            themeIcon.className = 'fa-solid fa-sun text-lg text-yellow-500';
+        } else {
+            html.classList.remove('dark');
+            themeIcon.className = 'fa-solid fa-moon text-lg';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.theme = 'light';
+                themeIcon.className = 'fa-solid fa-moon text-lg';
+            } else {
+                html.classList.add('dark');
+                localStorage.theme = 'dark';
+                themeIcon.className = 'fa-solid fa-sun text-lg text-yellow-500';
+            }
+            // Redraw chart upon theme changes to keep text colors legible
+            initChart();
+        });
+
+        // Mobile Menu Logic
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Interactive SEO Dashboard Data & ChartJS Integration
+        let seoChart = null;
+
+        const chartDatasets = {
+            traffic: {
+                label: 'Organic Traffic (Phiên / Tháng)',
+                data: [3000, 3800, 4900, 5800, 7200, 8500],
+                borderColor: '#10b981',
+                bgColor: 'rgba(16, 185, 129, 0.1)',
+                title: 'Organic Traffic Hàng Tháng',
+                val: '8,500 phiên/tháng',
+                desc: 'Đạt tỉ lệ tăng trưởng ấn tượng gấp 2.8 lần từ mức xuất phát điểm 3,000 phiên/tháng sau 6 tháng tiếp nhận chiến dịch đẩy mạnh Onpage và Content hữu ích.'
+            },
+            keywords: {
+                label: 'Từ khóa lọt Top 10 Google',
+                data: [15, 32, 54, 76, 98, 122],
+                borderColor: '#06b6d4',
+                bgColor: 'rgba(6, 182, 212, 0.1)',
+                title: 'Số Lượng Từ Khóa Top 10',
+                val: '120+ Từ khóa',
+                desc: 'Hơn 120 từ khóa sản phẩm cốt lõi đã gia nhập trang đầu Google một cách bền vững mà không phụ thuộc vào quảng cáo trả phí, nhờ cấu trúc Silo chặt chẽ.'
+            },
+            ctr: {
+                label: 'Tỷ lệ nhấp chuột trung bình (CTR %)',
+                data: [2.8, 3.2, 3.9, 4.3, 5.0, 5.6],
+                borderColor: '#6366f1',
+                bgColor: 'rgba(99, 102, 241, 0.1)',
+                title: 'Tỉ Lệ Nhấp Chuột (CTR)',
+                val: '5.6% trung bình',
+                desc: 'Gấp đôi hiệu suất CTR cũ (từ 2.8% lên 5.6%) nhờ triển khai viết Meta Description thu hút, sáng tạo các thẻ tiêu đề chứa con số, tăng kích thích tò mò.'
+            }
+        };
+
+        function initChart() {
+            const ctx = document.getElementById('performanceChart').getContext('2d');
+            const isDark = document.documentElement.classList.contains('dark');
+            const textColor = isDark ? '#cbd5e1' : '#475569';
+            const gridColor = isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)';
+
+            if (seoChart) {
+                seoChart.destroy();
+            }
+
+            // Default startup dataset
+            const datasetKey = 'traffic';
+            const currentData = chartDatasets[datasetKey];
+
+            seoChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6'],
+                    datasets: [{
+                        label: currentData.label,
+                        data: currentData.data,
+                        borderColor: currentData.borderColor,
+                        backgroundColor: currentData.bgColor,
+                        fill: true,
+                        tension: 0.35,
+                        borderWidth: 3,
+                        pointBackgroundColor: currentData.borderColor,
+                        pointBorderColor: '#fff',
+                        pointHoverRadius: 7
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            labels: {
+                                color: textColor,
+                                font: {
+                                    weight: 'bold',
+                                    size: 11
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: { color: gridColor },
+                            ticks: { color: textColor }
+                        },
+                        y: {
+                            grid: { color: gridColor },
+                            ticks: { color: textColor }
+                        }
+                    }
+                }
+            });
+        }
+
+        function updateChart(key) {
+            // Update button visual styles
+            ['traffic', 'keywords', 'ctr'].forEach(item => {
+                const btn = document.getElementById(`btn-${item}`);
+                if (item === key) {
+                    btn.className = "px-4 py-2 text-xs font-semibold rounded-lg bg-primary-600 text-white transition-all shadow-sm";
+                } else {
+                    btn.className = "px-4 py-2 text-xs font-semibold rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 transition-all";
+                }
+            });
+
+            // Update chart content
+            const selectedDataset = chartDatasets[key];
+            if (seoChart && selectedDataset) {
+                seoChart.data.datasets[0].label = selectedDataset.label;
+                seoChart.data.datasets[0].data = selectedDataset.data;
+                seoChart.data.datasets[0].borderColor = selectedDataset.borderColor;
+                seoChart.data.datasets[0].backgroundColor = selectedDataset.bgColor;
+                seoChart.data.datasets[0].pointBackgroundColor = selectedDataset.borderColor;
+                seoChart.update();
+
+                // Update text description metrics in real-time
+                document.getElementById('metric-title').textContent = selectedDataset.title;
+                document.getElementById('metric-val').innerHTML = selectedDataset.val;
+                document.getElementById('metric-desc').textContent = selectedDataset.desc;
+            }
+        }
+
+        // On-Page SEO Checker Calculator Logic
+        function calculateSEOScore() {
+            const kw = document.getElementById('targetKeyword').value.toLowerCase().trim();
+            const title = document.getElementById('targetTitle').value.trim();
+            const desc = document.getElementById('targetDesc').value.trim();
+            
+            let score = 0;
+            let checklistHTML = '';
+
+            if (!kw) {
+                checklistHTML = '<li class="flex items-start text-red-500"><span class="mr-2"><i class="fa-solid fa-circle-xmark"></i></span> Vui lòng điền Từ khóa chính mục tiêu.</li>';
+                updateScoreDisplay(0, checklistHTML);
+                return;
+            }
+
+            // 1. Keyword in Title check (30 pts)
+            if (title.toLowerCase().includes(kw)) {
+                score += 30;
+                checklistHTML += `<li class="flex items-start"><span class="text-green-500 mr-2"><i class="fa-solid fa-circle-check"></i></span> Từ khóa xuất hiện trong thẻ Tiêu đề (+30đ)</li>`;
+            } else {
+                checklistHTML += `<li class="flex items-start text-red-500"><span class="mr-2"><i class="fa-solid fa-circle-xmark"></i></span> Từ khóa chưa có trong Tiêu đề (Khuyên dùng: Đưa từ khóa ra đầu tiêu đề).</li>`;
+            }
+
+            // 2. Title length check (20 pts)
+            const titleLen = title.length;
+            if (titleLen >= 50 && titleLen <= 65) {
+                score += 20;
+                checklistHTML += `<li class="flex items-start"><span class="text-green-500 mr-2"><i class="fa-solid fa-circle-check"></i></span> Độ dài Tiêu đề hoàn hảo: ${titleLen} ký tự (+20đ)</li>`;
+            } else {
+                checklistHTML += `<li class="flex items-start text-amber-500"><span class="mr-2"><i class="fa-solid fa-circle-exclamation"></i></span> Độ dài Tiêu đề hiện tại là ${titleLen} ký tự. (Khoảng tối ưu khuyến nghị: 50-65 ký tự để tránh bị cắt bớt hiển thị trên SERP).</li>`;
+            }
+
+            // 3. Keyword in Meta Description check (30 pts)
+            if (desc.toLowerCase().includes(kw)) {
+                score += 30;
+                checklistHTML += `<li class="flex items-start"><span class="text-green-500 mr-2"><i class="fa-solid fa-circle-check"></i></span> Từ khóa xuất hiện trong Meta Description (+30đ)</li>`;
+            } else {
+                checklistHTML += `<li class="flex items-start text-red-500"><span class="mr-2"><i class="fa-solid fa-circle-xmark"></i></span> Chưa tối ưu từ khóa chính trong Meta Description. (Google sẽ tô đậm từ khóa giúp tăng CTR nhấp chuột).</li>`;
+            }
+
+            // 4. Meta Description length check (20 pts)
+            const descLen = desc.length;
+            if (descLen >= 120 && descLen <= 160) {
+                score += 20;
+                checklistHTML += `<li class="flex items-start"><span class="text-green-500 mr-2"><i class="fa-solid fa-circle-check"></i></span> Độ dài Mô tả Meta chuẩn: ${descLen} ký tự (+20đ)</li>`;
+            } else {
+                checklistHTML += `<li class="flex items-start text-amber-500"><span class="mr-2"><i class="fa-solid fa-circle-exclamation"></i></span> Độ dài mô tả Meta là ${descLen} ký tự. (Khoảng tối ưu khuyến nghị: 120-160 ký tự giúp tối đa hoá nội dung thu hút).</li>`;
+            }
+
+            updateScoreDisplay(score, checklistHTML);
+        }
+
+        function updateScoreDisplay(score, checklistHTML) {
+            const badge = document.getElementById('scoreBadge');
+            const bar = document.getElementById('scoreBar');
+            const list = document.getElementById('checklist');
+
+            badge.textContent = `${score} / 100`;
+            bar.style.width = `${score}%`;
+            list.innerHTML = checklistHTML;
+
+            // Update badge color based on score tier
+            if (score >= 80) {
+                badge.className = "px-3 py-1 bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 rounded-full font-bold text-sm";
+            } else if (score >= 50) {
+                badge.className = "px-3 py-1 bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 rounded-full font-bold text-sm";
+            } else {
+                badge.className = "px-3 py-1 bg-red-100 text-red-800 dark:bg-red-950 dark:text-red-300 rounded-full font-bold text-sm";
+            }
+        }
+
+        // Contact Form Fake Submit Handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const toast = document.getElementById('toastSuccess');
+            
+            // Show custom Success message
+            toast.classList.remove('hidden');
+            
+            // Clear inputs
+            document.getElementById('contactName').value = '';
+            document.getElementById('contactEmail').value = '';
+            document.getElementById('contactSubject').value = '';
+            document.getElementById('contactMessage').value = '';
+
+            // Hide Toast after 6 seconds
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 6000);
+        }
+
+        // Initialize things on page load
+        window.onload = function() {
+            initChart();
+            calculateSEOScore();
+        };
+    </script>
+</body>
+</html>
